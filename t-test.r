@@ -23,6 +23,6 @@ input <- rbind(scaled.1, scaled.2)
 rm(scaled.1)
 rm(scaled.2)
 
-outmat <- apply(input, 2, function(dat){t.test(dat[first],dat[-first])$p.value})
+outmat <- apply(input, 2, function(dat){t.test(dat[first],dat[-first], alternative="two.sided")$p.value})
 
 write.table(outmat, args[3], quote=FALSE, row.names=FALSE, col.names = FALSE)
