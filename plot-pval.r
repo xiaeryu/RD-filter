@@ -1,6 +1,9 @@
 # Read data, change input file name accordingly
 data <- read.table("final_output")
 
+# Change p-val to -log10(p-val)
+data <- -log10(data)
+
 # Save to a png file
 png("Summary.plot.png", height=960, width=2000)
 
